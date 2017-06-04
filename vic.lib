@@ -65,7 +65,12 @@ pluckish(110, 71, rnd(2))
 echo = +~(de.fdelay(4 * ma.SR, 2 * ma.SR) * 0.8);
 
 
-noise_ticks(amt2) = ba.beat(scale(480, 1000, amt2)) : ba.toggle : en.ar(0.001, 0.001) * no.noise * 0.3 *amt2;
+noise_ticks(amt2) = clk : ba.toggle : 
+en.ar(0.001, 0.001) * os.saw2(trand(rnd(3), clk) * 3000 + 100) * 0.5 *amt2  
+//fi.resonbp(trand(rnd(3), clk) * 3000 + 1000, 1, 1.0)
+with {
+clk = ba.beat(scale(180, 480, amt2));
+};
 
 
 
