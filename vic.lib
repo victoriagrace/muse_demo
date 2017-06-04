@@ -69,7 +69,7 @@ noise_ticks(amt2) = ba.beat(scale(480, 1000, amt2)) : ba.toggle : en.ar(0.001, 0
 
 
 
-global_fx(amt, attn, dry) =  dry + chords(amt) + bass(amt) + plucks * lscale(0.3, attn) + noise_ticks(attn) <:_,_ : 
+global_fx(amt, attn, dry) =  dry + chords(amt) + bass(amt) + plucks * lscale(0.3, amt) + noise_ticks(attn) <:_,_ : 
 
 
 re.zita_rev1_stereo(10, 350, 4000, 10, 20, 96000) : ba.selectn(2, 0) : (1 - amt) * dry + amt *  _;
