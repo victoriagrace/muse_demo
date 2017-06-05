@@ -1,4 +1,4 @@
-#Mac instructions for muse_demo.maxpat: match patch recieving osc messages from Muse headset to control mindwave.dsp objects (2 for stereo) created with Faust
+#Mac instructions for muse_demo.maxpat: match patch recieving Osc messages from Muse headset to control mindwave.dsp objects (2 for stereo) created with Faust
 
 
 1) Turn on Muse headset and pair to Mac bluetooth.
