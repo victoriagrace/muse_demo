@@ -41,12 +41,13 @@ fosc(62,2,1,1 * amt) * lfo(1/13) * lscale(0.4, amt)
 lscale(thresh, amt) = ((amt - thresh) / (1.0 - thresh)) * (amt > thresh);
 
 bass(amt) = 
+fosc(24, 1, 2, 4 * amt :si.smooth(ba.tau2pole(0.2)) ) * 0.4 *scale(amt, 1, lfo(1/15)) + 
 fosc(36, 1, 1.001, 8 * amt) * scale(amt, 1, lfo(1/11)) + 
-fosc(24, 1, 0.999, 8 * amt) * scale(amt, 1, lfo(1/11)) * 0.5 : _ * 0.2 * lscale(0.7, amt); 
+fosc(24, 1, 0.999, 8 * amt) * scale(amt, 1, lfo(1/10)) * 0.5 : _ * 0.2 * lscale(0.7, amt); 
 
-noise_sources = no.multinoise(5);
+noise_sources = no.multinoise(9);
 
-rnd(n) = noise_sources : ba.selectn(5, n);
+rnd(n) = noise_sources : ba.selectn(9, n);
 
 trand(rnd, t) = rnd : ba.sAndH(t);
 
@@ -66,10 +67,10 @@ echo = +~(de.fdelay(4 * ma.SR, 2 * ma.SR) * 0.8);
 
 
 noise_ticks(amt2) = clk : ba.toggle : 
-en.ar(0.001, 0.001) * os.saw2(trand(rnd(3), clk) * 3000 + 100) * 0.5 *amt2  
+en.ar(0.001, 0.0001) * os.osc(trand(rnd(3), clk) * 4000 + 100) * 0.6 *amt2  
 //fi.resonbp(trand(rnd(3), clk) * 3000 + 1000, 1, 1.0)
 with {
-clk = ba.beat(scale(180, 480, amt2));
+clk = ba.beat(scale(100, 480, amt2));
 };
 
 
