@@ -4,7 +4,6 @@
 1) Turn on Muse headset and pair to Mac bluetooth.
 2) Once connected to bluetooth, run following command in the terminal
 
-# from http://developer.choosemuse.com/research-tools-example/grabbing-data-from-museio-a-few-simple-examples-of-muse-osc-servers
 muse-io --osc osc.udp://localhost:5000
 
 3) Open muse_demo.maxpat and turn on Dac (click speaker icon). 
