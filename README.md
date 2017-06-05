@@ -2,7 +2,7 @@
 
 
 1) Turn on Muse headset and pair to Mac bluetooth.
-2) Once connected to bluetooth, run following command in the terminal
+2) Once connected to bluetooth, run following command in the terminal:
 
 muse-io --osc osc.udp://localhost:5000
 
