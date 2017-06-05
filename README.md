@@ -6,7 +6,7 @@
 
 muse-io --osc osc.udp://localhost:5000
 
-3) Open muse_demo.maxpat and turn on Dac (click speaker icon). 
+3) Open muse_demo.maxpat and turn on ezdac (click speaker icon). 
 
 #Note: mindwave~.mxo object was transpiled for Mac from Faust mindwave.dsp object (with bulk of code in vic.lib). If you are using Windows or Linux, re-transpile mindwave.dsp by first installing Faust, then running the make file. 
 
